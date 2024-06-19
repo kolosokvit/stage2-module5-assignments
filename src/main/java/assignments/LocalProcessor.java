@@ -38,8 +38,8 @@ public class LocalProcessor {
     @ListIteratorAnnotation
     public void iterateList(List<String> stringList) {
         stringArrayList = new LinkedList<>(stringList);
-        for (int i = 0; i < period; i++) {
-            System.out.println(stringArrayList.get(i).hashCode());
+        for (String s : stringList) {
+            System.out.println(s.hashCode());
         }
     }
 
