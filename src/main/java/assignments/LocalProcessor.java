@@ -21,6 +21,7 @@ public class LocalProcessor {
     private Integer valueOfCheap;
     private Scanner informationScanner;
     private List<String> stringArrayList;
+    private StringBuilder stringBuilder;
 
     public LocalProcessor(String processorName, Long period, String processorVersion, Integer valueOfCheap,
                           Scanner informationscanner, List<String> stringArrayList) {
@@ -49,7 +50,7 @@ public class LocalProcessor {
 
     @FullNameProcessorGeneratorAnnotation
     public String generateFullProcessorName(List<String> stringList) {
-        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder = new StringBuilder();
         for (String s : stringList) {
             stringBuilder.append(s);
         }
@@ -61,7 +62,7 @@ public class LocalProcessor {
     public void readFullProcessorName(File file) {
         try {
             informationScanner = new Scanner(file);
-            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder = new StringBuilder();
             while (informationScanner.hasNext()) {
                 stringBuilder.append(informationScanner.nextLine());
             }
